@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"fmt"
 	"github.com/bwesterb/go-zonefile"
-	"io/ioutil"
 	"os"
 	"strconv"
 )
@@ -17,7 +16,7 @@ func main() {
 	}
 
 	// Load zonefile
-	data, ioerr := ioutil.ReadFile(os.Args[1])
+	data, ioerr := os.ReadFile(os.Args[1])
 	if ioerr != nil {
 		fmt.Println(os.Args[1], ioerr)
 		os.Exit(2)
